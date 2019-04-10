@@ -1,26 +1,47 @@
 import styled from 'styled-components'
 
 const LoginFormContainer = styled.div `
-  background: red;
-  height: 100px;
-  width: 500px;
+  height: 350px;
+  width: 50%;
+  background: white	;
+  border-radius: 5px;
+
 `
 
 const LoginFormItem = styled.form `
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+  height: 100%;
 
+
+  input {
+    width: 60%;
+    border: none;
+    border-bottom: 2px solid #7289da;
+    height: 40px;
+    font-size: 15px
+    text-align: center;
+    ::placeholder {
+      color: #7289da;
+    }
+  }
+
+  button {
+    width: 70%;
+    height: 50px;
+    border-radius: 5px;
+    background: #7289da;
+    border: none;
+    font-size: 20px;
+    color: white;
+  }
 `
 
-const FormButton = styled.button `
-
-`
-
-const FormInput = styled.input `
-
-`
 
 export {
   LoginFormContainer,
   LoginFormItem,
-  FormButton,
-  FormInput
 }

@@ -2,14 +2,23 @@ import React, { useState } from 'react'
 
 import {
   LoginFormItem,
-  FormButton,
-  FormInput
 } from '../styles/S_LoginForm'
 
 const LoginForm = props => {
 
   return (
-    <LoginFormItem />
+    <LoginFormItem>
+      <input
+        name='username'
+        placeholder='Enter Username'
+      />
+      <input
+        type='password'
+        name='username'
+        placeholder='Enter Password'
+      />
+      <button>Login</button>
+    </LoginFormItem>
   )
 }
 
