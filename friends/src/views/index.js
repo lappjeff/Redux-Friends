@@ -1,3 +1,3 @@
 import Login from './Login'
-
-export { Login }
+import  FriendsList   from './FriendsList'
+export { Login, FriendsList }
