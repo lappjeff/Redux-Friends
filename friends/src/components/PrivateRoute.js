@@ -18,9 +18,9 @@ const PrivateRoute = ({ component: Component, ...rest}) => {
   )
 }
 
-const mapStateToProps = ({ friendsReducer }) => (
+const mapStateToProps = ({ loginReducer }) => (
   {
-  errorStatusCode: friendsReducer.errorStatusCode
+  errorStatusCode: loginReducer.errorStatusCode
 })
 
 export default connect(

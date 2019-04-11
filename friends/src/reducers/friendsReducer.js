@@ -1,39 +1,33 @@
 import {
-  LOGIN_START,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL
+  FETCH_DATA_START,
+  FETCH_DATA_SUCCESS,
+  FETCH_DATA_FAIL,
 } from '../actions'
-
-import axios from 'axios'
 
 const initialState = {
   friends: [],
-  isLoggingIn: false
+  isFetching: false,
 }
 
 export const friendsReducer = (state = initialState, action) => {
   switch(action.type) {
-    case LOGIN_START:
+    case FETCH_DATA_START:
+
       return {
         ...state,
-        error: '',
-        isLoggingIn: true,
-        errorStatusCode: null
+        isFetching: true,
       }
-    case LOGIN_SUCCESS:
+    case FETCH_DATA_SUCCESS:
       return {
         ...state,
-        error: '',
-        isLoggingIn: false
+        isFetching: false,
+        friends: action.payload
       }
-    case LOGIN_FAIL:
-      return {
-        ...state,
-        error: 'Please check your credentials and try again',
-        errorStatusCode: null,
-        isLoggingIn: false
-      }
-    default:
-      return state
+      case FETCH_DATA_FAIL:
+        return {
+          ...state,
+          isFetching: false,
+        }
+    default: return state
   }
 }

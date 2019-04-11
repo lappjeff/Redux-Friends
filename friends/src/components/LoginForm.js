@@ -51,10 +51,10 @@ const LoginForm = props => {
   )
 }
 
-const mapStateToProps = ({ friendsReducer }) => {
+const mapStateToProps = ({ loginReducer }) => {
   return ({
-    error: friendsReducer.error,
-    isLoggingIn: friendsReducer.isLoggingIn
+    error: loginReducer.error,
+    isLoggingIn: loginReducer.isLoggingIn
   })
 }
 

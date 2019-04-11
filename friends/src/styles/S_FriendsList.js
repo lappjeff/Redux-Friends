@@ -8,13 +8,34 @@ export const HomeContainer = styled.div `
 `
 export const FriendsContainer = styled.div `
   background: #7289da;
-  display: flex;
-  justify-content: center;
   color: white;
   padding: 20px;
   grid-area: L;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
+  .friend {
+    display: grid;
+    grid-template-areas:
+      'n n n a a'
+      'e e e e e';
+    margin: 10px 0;
+  }
+
+  .name {
+    grid-area: n;
+  }
+
+  .age {
+    grid-area: a;
+  }
+
+  .email {
+    grid-area: e;
+  }
 `
 
 export const ButtonContainer = styled.div `
