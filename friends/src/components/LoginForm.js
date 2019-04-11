@@ -17,7 +17,7 @@ const LoginForm = props => {
       username: username,
       password: password
     }).then(() => {
-      props.history.push('/')
+      props.history.push('/friendsList')
     })
     setUsername('')
     setPassword('')

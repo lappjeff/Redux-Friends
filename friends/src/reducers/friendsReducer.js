@@ -15,7 +15,8 @@ export const friendsReducer = (state = initialState, action) => {
       return {
         ...state,
         error: '',
-        isLoggingIn: true
+        isLoggingIn: true,
+        errorStatusCode: null
       }
     case LOGIN_SUCCESS:
       return {
@@ -27,6 +28,7 @@ export const friendsReducer = (state = initialState, action) => {
       return {
         ...state,
         error: 'Please check your credentials and try again',
+        errorStatusCode: null,
         isLoggingIn: false
       }
     default:

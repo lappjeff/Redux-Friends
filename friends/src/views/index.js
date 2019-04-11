@@ -1,3 +1,4 @@
 import Login from './Login'
 import  FriendsList   from './FriendsList'
-export { Login, FriendsList }
+import Home from './Home'
+export { Login, FriendsList, Home }
