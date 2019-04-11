@@ -5,7 +5,7 @@ const LoginFormContainer = styled.div `
   width: 50%;
   background: white	;
   border-radius: 5px;
-
+  margin: 0 auto;
 `
 
 const LoginFormItem = styled.form `

@@ -1,10 +1,17 @@
 import React, { useState } from 'react'
 
-import {
-  LoginFormItem,
-} from '../styles/S_LoginForm'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import { login } from '../actions'
+import { LoginFormItem } from '../styles/S_LoginForm'
 
 const LoginForm = props => {
+
+  console.log(props)
+  const useLogin = e => {
+    e.preventDefault();
+    props.login()
+  }
 
   return (
     <LoginFormItem>
@@ -17,9 +24,14 @@ const LoginForm = props => {
         name='username'
         placeholder='Enter Password'
       />
-      <button>Login</button>
+      <button onClick={useLogin}>Login</button>
     </LoginFormItem>
   )
 }
 
-export default LoginForm
+export default withRouter(
+  connect(
+    null,
+    { login }
+  )(LoginForm)
+)
