@@ -6,7 +6,6 @@ export const LOGIN_FAIL = 'LOGIN_FAIL'
 
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START })
-  console.log(creds)
   return axios
     .post('http://localhost:5000/api/login', creds)
     .then(res => {

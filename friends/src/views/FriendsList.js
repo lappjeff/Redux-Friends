@@ -13,10 +13,10 @@ const FriendsList = props => {
     <HomeContainer>
     <FriendsContainer>
       <h2>Friends</h2>
-      
+
     </FriendsContainer>
     <ButtonContainer>
-      <Button>Login</Button>
+      <Button>Logout</Button>
     </ButtonContainer>
 
     </HomeContainer>

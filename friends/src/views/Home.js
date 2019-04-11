@@ -5,19 +5,21 @@ import { FriendsList } from '../views'
 import { HomeDiv } from '../styles/S_Home'
 const Home = props => {
   return (
-    <HomeDiv>
-      {localStorage.getItem('token') ? <FriendsList /> : (
-        <>
+    <>
+    {localStorage.getItem('token') ? <FriendsList /> : (
+      <>
+      <HomeDiv>
         <h1>Looks like you're not logged in.</h1>
         <h3>Log in to see your friends!</h3>
         <Link to='/login'>
           <button>Login</button>
         </Link>
-        </>
-      )}
-
-    </HomeDiv>
+      </HomeDiv>
+      </>
+    )}
+  </>
   )
+
 }
 
 export default Home

@@ -52,7 +52,6 @@ const LoginForm = props => {
 }
 
 const mapStateToProps = ({ friendsReducer }) => {
-  console.log(friendsReducer)
   return ({
     error: friendsReducer.error,
     isLoggingIn: friendsReducer.isLoggingIn

@@ -4,6 +4,8 @@ import {
   LOGIN_FAIL
 } from '../actions'
 
+import axios from 'axios'
+
 const initialState = {
   friends: [],
   isLoggingIn: false
