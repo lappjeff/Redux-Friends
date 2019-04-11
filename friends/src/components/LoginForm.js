@@ -10,21 +10,21 @@ const LoginForm = props => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const credentials = {
+    username: username,
+    password: password
+  }
 
   const useLogin = e => {
     e.preventDefault();
-    props.login ({
-      username: username,
-      password: password
-    }).then(() => {
+    props.login (credentials)
+      .then(() => {
       props.history.push('/friendsList')
     })
     setUsername('')
     setPassword('')
 
   }
-
-  console.log(props)
 
   return (
     <LoginFormItem>

@@ -6,11 +6,14 @@ export const LOGIN_FAIL = 'LOGIN_FAIL'
 
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START })
+  console.log(creds)
   return axios
     .post('http://localhost:5000/api/login', creds)
     .then(res => {
       localStorage.setItem('token', res.data.payload)
       dispatch({ type: LOGIN_SUCCESS, payload: res.data.payload})
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      dispatch({ type: LOGIN_FAIL, payload: err})
+    })
 }

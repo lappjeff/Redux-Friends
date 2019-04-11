@@ -32,7 +32,6 @@ export const friendsReducer = (state = initialState, action) => {
         isLoggingIn: false
       }
     default:
-      console.log('trigged')
       return state
   }
 }
