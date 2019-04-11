@@ -38,6 +38,7 @@ const LoginFormItem = styled.form `
     font-size: 20px;
     color: white;
     cursor: pointer;
+    text-align: center;
   }
 `
 
