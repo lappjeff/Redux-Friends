@@ -5,7 +5,6 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAIL = 'LOGIN_FAIL'
 
 export const login = creds => dispatch => {
-  console.log(creds)
   dispatch({ type: LOGIN_START })
   return axios
     .post('http://localhost:5000/api/login', creds)
