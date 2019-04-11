@@ -12,11 +12,22 @@ const initialState = {
 export const friendsReducer = (state = initialState, action) => {
   switch(action.type) {
     case LOGIN_START:
-      console.log(state)
       return {
         ...state,
         error: '',
         isLoggingIn: true
+      }
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        error: '',
+        isLoggingIn: false
+      }
+    case LOGIN_FAIL:
+      return {
+        ...state,
+        error: 'Please check your credentials and try again',
+        isLoggingIn: false
       }
     default:
       console.log('trigged')

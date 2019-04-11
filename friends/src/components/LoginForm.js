@@ -16,6 +16,8 @@ const LoginForm = props => {
     props.login ({
       username: username,
       password: password
+    }).then(() => {
+      props.history.push('/')
     })
     setUsername('')
     setPassword('')
