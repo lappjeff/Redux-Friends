@@ -11,6 +11,7 @@ import {
 } from '../styles/S_FriendsList.js'
 
 import Friend  from '../components/Friend'
+import AddFriendForm from '../components/AddFriendForm'
 const FriendsList = props => {
 
   useEffect(() => props.getData(), [])
@@ -27,6 +28,8 @@ const FriendsList = props => {
         return <Friend friend={friend} key={friend.id}/>
       })}
     </FriendsContainer>
+
+    <AddFriendForm />
     <ButtonContainer>
       <Button onClick={logOut}>Logout</Button>
     </ButtonContainer>

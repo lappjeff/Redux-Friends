@@ -4,13 +4,15 @@ export const HomeContainer = styled.div `
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-areas: 'L L L B B'
+  grid-template-areas:
+    'FC FC AF AF AF AF'
+    'FC FC B B B B'
 `
 export const FriendsContainer = styled.div `
   background: #7289da;
   color: white;
   padding: 20px;
-  grid-area: L;
+  grid-area: FC;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 const LoginFormContainer = styled.div `
-  height: 350px;
-  width: 50%;
+  height: ${props => props.height};
   background: white	;
   border-radius: 5px;
   margin: 0 auto;
+  width: ${props => props.width}
+  grid-area: ${props => props.gridArea};
 `
 
 const LoginFormItem = styled.form `

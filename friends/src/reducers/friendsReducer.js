@@ -12,7 +12,6 @@ const initialState = {
 export const friendsReducer = (state = initialState, action) => {
   switch(action.type) {
     case FETCH_DATA_START:
-
       return {
         ...state,
         isFetching: true,

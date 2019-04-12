@@ -5,7 +5,7 @@ import {
 } from '../actions'
 
 const initialState = {
-  isLoggingIn: false
+  isLoggingIn: false,
 }
 
 export const loginReducer = (state = initialState, action) => {
