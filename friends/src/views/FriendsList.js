@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { getData } from '../actions'
 import { withRouter } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 import {
   HomeContainer,
   FriendsContainer,
@@ -14,9 +15,14 @@ import Friend  from '../components/Friend'
 import AddFriendForm from '../components/AddFriendForm'
 const FriendsList = props => {
 
-  useEffect(() => props.getData(), [])
+  useEffect(() => useData(), [])
+  useEffect(() => setFriends([...props.friends]), [props.friends])
 
+  const [friends, setFriends] = useState([])
 
+  const useData = () => {
+    props.getData()
+  }
 
   const logOut = () => {
     localStorage.removeItem('token')
@@ -27,9 +33,10 @@ const FriendsList = props => {
     <HomeContainer>
     <FriendsContainer>
       <h2>Friends</h2>
-      {props.friends.map(friend => {
-        return <Friend friend={friend} key={friend.id}/>
-      })}
+      {props.isFetching ?
+        <Loader type="Audio" color="white" height={80} width={80} /> :
+        friends.map(friend => <Friend key={friend.email} friend={friend}/>)
+      }
     </FriendsContainer>
 
     <AddFriendForm getData={props.getData}/>
