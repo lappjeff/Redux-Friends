@@ -8,6 +8,8 @@ export const ADD_FRIEND_FAIL = 'ADD_FRIEND_FAIL'
 export const addFriend = info => dispatch => {
   dispatch ({ type: ADD_FRIEND_START, payload: info })
 
+
+
   return axiosWithAuth()
     .post('http://localhost:5000/api/friends', info)
     .then(res => {

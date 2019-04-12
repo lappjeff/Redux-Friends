@@ -39,7 +39,11 @@ const FriendsList = props => {
       }
     </FriendsContainer>
 
-    <AddFriendForm getData={props.getData}/>
+    <AddFriendForm
+      updateFriends={setFriends}
+      friends={friends}
+      getData={props.getData}
+    />
     <ButtonContainer>
       <Button onClick={logOut}>Logout</Button>
     </ButtonContainer>

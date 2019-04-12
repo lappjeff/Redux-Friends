@@ -19,7 +19,7 @@ const LoginForm = props => {
     e.preventDefault();
     props.login (credentials)
       .then(() => {
-        props.history.push('/friendsList')
+         !props.error && props.history.push('/friendsList')
     })
     setUsername('')
     setPassword('')

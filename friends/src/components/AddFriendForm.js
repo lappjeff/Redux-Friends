@@ -9,14 +9,17 @@ const AddFriendForm = props => {
   const [age, setAge] = useState('')
   const [email, setEmail] = useState('')
 
+  const newFriend = {
+    name,
+    age,
+    email
+  }
+
   const addFriend = e => {
     e.preventDefault();
     if (email && age && name) {
-      props.addFriend({
-        name,
-        age,
-        email
-      })
+      props.addFriend(newFriend)
+        .then(() => props.updateFriends([...props.friends, newFriend]))
       setName('')
       setAge('')
       setEmail('')
@@ -45,6 +48,7 @@ const AddFriendForm = props => {
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
+        <h2>{props.message}</h2>
         <button
           type='submit'
           onClick={addFriend}
