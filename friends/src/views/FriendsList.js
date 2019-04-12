@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 import { connect } from 'react-redux'
 import { getData } from '../actions'
+import { withRouter } from 'react-router-dom'
 import {
   HomeContainer,
   FriendsContainer,
@@ -14,6 +15,10 @@ const FriendsList = props => {
 
   useEffect(() => props.getData(), [])
 
+  const logOut = () => {
+    localStorage.removeItem('token')
+    props.history.push('/')
+  }
   return (
     <HomeContainer>
     <FriendsContainer>
@@ -23,7 +28,7 @@ const FriendsList = props => {
       })}
     </FriendsContainer>
     <ButtonContainer>
-      <Button>Logout</Button>
+      <Button onClick={logOut}>Logout</Button>
     </ButtonContainer>
 
     </HomeContainer>
@@ -37,4 +42,5 @@ const mapStateToProps = state => ({ friendsReducer }) => {
   }
 }
 
-export default connect(mapStateToProps, { getData })(FriendsList)
+export default withRouter(
+  connect(mapStateToProps, { getData })(FriendsList))
