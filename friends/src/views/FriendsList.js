@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { connect } from 'react-redux'
 import { getData } from '../actions'
@@ -16,10 +16,13 @@ const FriendsList = props => {
 
   useEffect(() => props.getData(), [])
 
+
+
   const logOut = () => {
     localStorage.removeItem('token')
     props.history.push('/')
   }
+
   return (
     <HomeContainer>
     <FriendsContainer>
@@ -29,7 +32,7 @@ const FriendsList = props => {
       })}
     </FriendsContainer>
 
-    <AddFriendForm />
+    <AddFriendForm getData={props.getData}/>
     <ButtonContainer>
       <Button onClick={logOut}>Logout</Button>
     </ButtonContainer>
