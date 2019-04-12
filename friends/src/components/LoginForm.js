@@ -19,7 +19,7 @@ const LoginForm = props => {
     e.preventDefault();
     props.login (credentials)
       .then(() => {
-      props.history.push('/friendsList')
+        props.history.push('/friendsList')
     })
     setUsername('')
     setPassword('')
@@ -41,6 +41,7 @@ const LoginForm = props => {
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
+      {props.error ? <h3 className='error-message'>{props.error}</h3>: null}
       <button onClick={useLogin}>{
         props.isLoggingIn ?
           <Loader type='ThreeDots' color='white' height='10' width='70' /> :

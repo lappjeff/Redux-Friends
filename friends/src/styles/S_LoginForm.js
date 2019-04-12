@@ -7,6 +7,14 @@ const LoginFormContainer = styled.div `
   margin: 0 auto;
   width: ${props => props.width}
   grid-area: ${props => props.gridArea};
+
+  .error-message {
+    color: #7289da;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+  
+  }
 `
 
 const LoginFormItem = styled.form `
